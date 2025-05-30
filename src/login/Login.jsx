@@ -29,11 +29,14 @@ class Login extends Component {
             userFromStore.password === password
         ) {
             localStorage.setItem("loggedIn", "true");
+            sessionStorage.setItem("accessedViaLogin", "true"); 
             this.setState({ dashboard: true });
         } else {
             localStorage.setItem("loggedIn", "false");
+            sessionStorage.removeItem("accessedViaLogin"); 
             alert("User does not exist!");
         }
+          
 
        
         this.setState({

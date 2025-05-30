@@ -297,8 +297,10 @@ class Dashboard extends Component {
 
     logOut = () => {
         localStorage.setItem("loggedIn", "false");
+        sessionStorage.removeItem("accessedViaLogin"); 
         window.location.href = "/login";
     };
+    
 
 
     showLogOut = (id) => {
